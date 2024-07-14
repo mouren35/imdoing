@@ -1,6 +1,8 @@
 // lib/screens/task_list_screen.dart
 import 'package:flutter/material.dart';
+import 'package:isar/isar.dart';
 
+import '../main.dart';
 import '../models/task.dart';
 import '../widgets/task_list_item.dart';
 
@@ -12,11 +14,20 @@ class TaskListScreen extends StatefulWidget {
 }
 
 class _TaskListScreenState extends State<TaskListScreen> {
-  final List<Task> tasks = [
-    Task(title: '账号设置与邀请码', duration: '25分钟'),
-    Task(title: '锁定', duration: '25分钟'),
-    Task(title: '讨论组/时间百科', duration: '25分钟'),
-  ];
+  List<Task> tasks = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadTasks();
+  }
+
+  Future<void> _loadTasks() async {
+    final tasksFromDb = await isar.tasks.where().findAll();
+    setState(() {
+      tasks = tasksFromDb;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

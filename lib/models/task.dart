@@ -1,12 +1,16 @@
 // lib/models/task.dart
-class Task {
-  final String title;
-  final String duration;
-  bool isDone;
+import 'package:isar/isar.dart';
 
-  Task({
-    required this.title,
-    required this.duration,
-    this.isDone = false,
-  });
+part 'task.g.dart';
+
+@Collection()
+class Task {
+  Id id = Isar.autoIncrement;
+
+  late String title;
+  late String duration;
+  bool isDone = false;
+
+  Task();
+  Task.create(this.title, this.duration);
 }
