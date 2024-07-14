@@ -1,7 +1,7 @@
-// home_screen.dart
+// lib/screens/home_screen.dart
 import 'package:flutter/material.dart';
 
-import 'navigation_bar.dart';
+import '../widgets/custom_navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

@@ -1,4 +1,4 @@
-// navigation_bar.dart
+// lib/widgets/custom_navigation_bar.dart
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
