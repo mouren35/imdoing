@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_navigation_bar.dart';
+import 'task_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     Text('动态'),
-    Text('清单'),
+    TaskListScreen(), // 使用清单界面
     Text('日志'),
     Text('我的'),
   ];
