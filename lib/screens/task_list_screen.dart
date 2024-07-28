@@ -7,10 +7,10 @@ import '../models/task.dart';
 import '../widgets/task_list_item.dart';
 
 class TaskListScreen extends StatefulWidget {
-  const TaskListScreen({Key? key}) : super(key: key);
+  const TaskListScreen({super.key});
 
   @override
-  _TaskListScreenState createState() => _TaskListScreenState();
+  State<TaskListScreen> createState() => _TaskListScreenState();
 }
 
 class _TaskListScreenState extends State<TaskListScreen> {
@@ -35,12 +35,12 @@ class _TaskListScreenState extends State<TaskListScreen> {
       body: ListView(
         children: [
           ExpansionTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.menu,
               color: Colors.deepPurple,
               size: 24.0,
             ),
-            title: Text(
+            title: const Text(
               '我在',
               style: TextStyle(
                 color: Color(0xFF2E2424),
@@ -49,7 +49,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
             ),
             trailing: Text(
               '${tasks.length}项',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Color(0xFF2E2424),
                 fontSize: 16.0,
               ),
@@ -58,7 +58,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
           ),
         ],
       ),
-      backgroundColor: Color(0xFFF5F3E4), // 设置 Scaffold 背景色
+      backgroundColor: const Color(0xFFF5F3E4), // 设置 Scaffold 背景色
     );
   }
 }

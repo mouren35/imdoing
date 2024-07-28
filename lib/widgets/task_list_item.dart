@@ -6,10 +6,10 @@ import '../models/task.dart';
 class TaskListItem extends StatefulWidget {
   final Task task;
 
-  const TaskListItem({required this.task, Key? key}) : super(key: key);
+  const TaskListItem({required this.task, super.key});
 
   @override
-  _TaskListItemState createState() => _TaskListItemState();
+  State<TaskListItem> createState() => _TaskListItemState();
 }
 
 class _TaskListItemState extends State<TaskListItem> {
@@ -23,7 +23,7 @@ class _TaskListItemState extends State<TaskListItem> {
             unselectedWidgetColor: Colors.deepPurple, // 设置未选中状态的颜色
           ),
           child: Checkbox(
-            shape: CircleBorder(), // 设置复选框为圆形
+            shape: const CircleBorder(), // 设置复选框为圆形
             activeColor: Colors.deepPurple, // 设置激活状态的颜色
             value: widget.task.isDone,
             onChanged: (bool? value) {
@@ -37,14 +37,14 @@ class _TaskListItemState extends State<TaskListItem> {
       title: Text(
         widget.task.title,
         style: TextStyle(
-          color: Color(0xFF2E2424),
+          color: const Color(0xFF2E2424),
           fontSize: 16.0,
           decoration: widget.task.isDone ? TextDecoration.lineThrough : null,
         ),
       ),
       trailing: Text(
         widget.task.duration,
-        style: TextStyle(
+        style: const TextStyle(
           color: Color(0xFF2E2424),
           fontSize: 16.0,
         ),

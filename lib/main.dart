@@ -17,16 +17,18 @@ void main() async {
     directory: dir.path,
   );
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // 去掉debug条
-      theme: AppTheme.theme, // 使用封装好的主题
-      home: HomeScreen(),
+      theme: AppTheme.lightTheme, // 使用封装好的主题
+      home: const HomeScreen(),
     );
   }
 }
